@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.phtms.raspicontroll">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SensorActivity" />
+
+        <activity android:name=".cameraActivity" />
+        <activity android:name=".rotatorActivity" />
+        <activity android:name=".AlarmSensor"></activity>
+
+        <service
+            android:name=".SensorAlert"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".configSend"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".configLoad"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".connectService"
+            android:enabled="true"
+            android:exported="true" />
+
+    </application>
+
+</manifest>
